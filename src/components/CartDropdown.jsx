@@ -1,9 +1,11 @@
 import { useCart } from "../context/useCart";
 import { FaTrashAlt } from "react-icons/fa";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const CartDropdown = () => {
-  const { cart, removeFromCart, clearCart, addToCart, decreaseFromCart } = useCart();
+  const { cart, removeFromCart, clearCart, addToCart, decreaseFromCart } =
+    useCart();
   const total = cart
     .reduce((acc, item) => acc + item.price * item.qty, 0) // reduce is used to calculate the total price of items in the cart by iterating through each item and summing up the product of price and quantity
     .toFixed(2); // Calculate total price of items in the cart
@@ -27,14 +29,18 @@ const CartDropdown = () => {
                   </div>
 
                   <div className="flex justify-between gap-2 w-20">
-                    <button onClick={() => addToCart(item)} className="p-0.5 bg-blue-500 rounded-full text-white">
+                    <button
+                      onClick={() => addToCart(item)}
+                      className="p-0.5 bg-blue-500 rounded-full text-white"
+                    >
                       <MdKeyboardArrowLeft className="h-5 w-5" />
                     </button>
-                    <span className="text-center">
-                      {item.qty}
-                    </span>
-                    <button onClick={() => decreaseFromCart(item.id)} className="p-0.5 bg-blue-500 rounded-full text-white">
-                      <MdKeyboardArrowRight className="h-5 w-5"/>
+                    <span className="text-center">{item.qty}</span>
+                    <button
+                      onClick={() => decreaseFromCart(item.id)}
+                      className="p-0.5 bg-blue-500 rounded-full text-white"
+                    >
+                      <MdKeyboardArrowRight className="h-5 w-5" />
                     </button>
                   </div>
 
@@ -58,11 +64,11 @@ const CartDropdown = () => {
             >
               Clear Cart
             </button>
-            <button
-              className="mt-3 w-full bg-blue-500 text-white py-1 rounded transition hover:bg-blue-600"
-            >
-              Check Out
-            </button>
+            <Link to="/checkout">
+              <button className="mt-3 w-full bg-blue-500 text-white py-1 rounded transition hover:bg-blue-600">
+                Check Out
+              </button>
+            </Link>
           </>
         )}
       </div>
