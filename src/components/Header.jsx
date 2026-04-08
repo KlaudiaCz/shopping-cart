@@ -10,7 +10,7 @@ const Header = () => {
   const itemCount = cart.reduce((acc, item) => acc + item.qty, 0); // Calculate total quantity of items in the cart
   
   return (
-    <header className="bg-white shadow-md p-4 flex justify-between items-center">
+    <header className="sticky top-0 bg-white shadow-md p-4 flex justify-between items-center">
       <h1 className="text-2xl font-bold text-blue-800">Shop Mate</h1>
       <div className="relative">
         <button

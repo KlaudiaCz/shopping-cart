@@ -2,11 +2,14 @@ import ProductCard from "./ProductCard";
 import { useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 
-const ProductList = ({ search, sort }) => {
+const ProductList = ({ search, sort, category }) => {
   const { products, loading, error } = useContext(ProductContext); // Access products, loading, and error from ProductContext
 
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase()),
+  )
+  .filter((product) => 
+    category === 'all' ? true : product.category === category
   );
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
@@ -24,11 +27,6 @@ const ProductList = ({ search, sort }) => {
       case "category-desc":
         return b.category.localeCompare(a.category);
     }
-
-    // if (sort === "price-asc") return a.price - b.price;
-    // if (sort === "price-desc") return b.price - a.price;
-    // if (sort === "name-asc") return a.name.localeCompare(b.name);
-    // if (sort === "name-desc") return b.name.localeCompare(a.name);
     return 0;
   });
 
