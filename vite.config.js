@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3001', // Proxy API requests to JSON server running on port 3001
+        target: 'http://localhost:3000', // Proxy API requests to JSON server running on port 3001
         rewrite: (path) => path.replace(/^\/api/, ''), // Remove '/api' prefix when forwarding to JSON server
         changeOrigin: true, // Change the origin of the host header to the target URL
       }

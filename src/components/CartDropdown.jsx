@@ -58,6 +58,11 @@ const CartDropdown = () => {
             >
               Clear Cart
             </button>
+            <button
+              className="mt-3 w-full bg-blue-500 text-white py-1 rounded transition hover:bg-blue-600"
+            >
+              Check Out
+            </button>
           </>
         )}
       </div>
