@@ -59,6 +59,306 @@
       "category": "Adapters",
       "rating": 4.1,
       "image": "images/product-6.png"
+    },
+    {
+      "id": "7",
+      "name": "4K Monitor",
+      "description": "27-inch UHD monitor with HDR support and ultra-thin bezels.",
+      "price": 299.99,
+      "quantity": 20,
+      "category": "Displays",
+      "rating": 4.6,
+      "image": "images/product-7.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Laptop Stand",
+      "description": "Adjustable aluminum stand for better ergonomics.",
+      "price": 19.99,
+      "quantity": 60,
+      "category": "Office",
+      "rating": 4.4,
+      "image": "images/product-8.jpg"
+    },
+    {
+      "id": "9",
+      "name": "Wireless Charger",
+      "description": "Fast charging pad compatible with all Qi devices.",
+      "price": 14.99,
+      "quantity": 80,
+      "category": "Charging",
+      "rating": 4.2,
+      "image": "images/product-9.jpg"
+    },
+    {
+      "id": "10",
+      "name": "Power Bank",
+      "description": "10000mAh portable charger with dual USB ports.",
+      "price": 22.99,
+      "quantity": 70,
+      "category": "Charging",
+      "rating": 4.3,
+      "image": "images/product-10.jpg"
+    },
+    {
+      "id": "11",
+      "name": "Webcam HD",
+      "description": "1080p webcam with built-in microphone.",
+      "price": 34.99,
+      "quantity": 35,
+      "category": "Streaming",
+      "rating": 4.1,
+      "image": "images/product-11.jpg"
+    },
+    {
+      "id": "12",
+      "name": "Ring Light",
+      "description": "LED ring light with adjustable brightness.",
+      "price": 27.99,
+      "quantity": 45,
+      "category": "Streaming",
+      "rating": 4.5,
+      "image": "images/product-12.jpeg"
+    },
+    {
+      "id": "13",
+      "name": "Gaming Chair",
+      "description": "Comfortable chair with lumbar support.",
+      "price": 149.99,
+      "quantity": 10,
+      "category": "Furniture",
+      "rating": 4.6,
+      "image": "images/product-13.jpg"
+    },
+    {
+      "id": "14",
+      "name": "Desk Lamp",
+      "description": "LED lamp with touch controls and dimming.",
+      "price": 18.99,
+      "quantity": 55,
+      "category": "Office",
+      "rating": 4.3,
+      "image": "images/product-14.jpg"
+    },
+    {
+      "id": "15",
+      "name": "External SSD",
+      "description": "Fast portable SSD with 1TB storage.",
+      "price": 129.99,
+      "quantity": 25,
+      "category": "Storage",
+      "rating": 4.7,
+      "image": "images/product-15.jpg"
+    },
+    {
+      "id": "16",
+      "name": "USB Flash Drive",
+      "description": "128GB USB 3.0 flash drive.",
+      "price": 12.99,
+      "quantity": 90,
+      "category": "Storage",
+      "rating": 4.2,
+      "image": "images/product-16.jpg"
+    },
+    {
+      "id": "17",
+      "name": "Router WiFi 6",
+      "description": "High-speed router with wide coverage.",
+      "price": 89.99,
+      "quantity": 30,
+      "category": "Networking",
+      "rating": 4.5,
+      "image": "images/product-17.avif"
+    },
+    {
+      "id": "18",
+      "name": "Ethernet Cable",
+      "description": "Cat6 cable for fast and stable connection.",
+      "price": 6.99,
+      "quantity": 150,
+      "category": "Networking",
+      "rating": 4.1,
+      "image": "images/product-18.jpg"
+    },
+    {
+      "id": "19",
+      "name": "Graphics Tablet",
+      "description": "Drawing tablet for designers and artists.",
+      "price": 79.99,
+      "quantity": 20,
+      "category": "Creative",
+      "rating": 4.6,
+      "image": "images/product-19.jpg"
+    },
+    {
+      "id": "20",
+      "name": "Stylus Pen",
+      "description": "Precision stylus for tablets and phones.",
+      "price": 15.99,
+      "quantity": 65,
+      "category": "Creative",
+      "rating": 4.3,
+      "image": "images/product-20.jpg"
+    },
+    {
+      "id": "21",
+      "name": "VR Headset",
+      "description": "Immersive virtual reality headset.",
+      "price": 199.99,
+      "quantity": 12,
+      "category": "Gaming",
+      "rating": 4.7,
+      "image": "images/product-21.jpg"
+    },
+    {
+      "id": "22",
+      "name": "Game Controller",
+      "description": "Wireless controller compatible with PC and console.",
+      "price": 49.99,
+      "quantity": 40,
+      "category": "Gaming",
+      "rating": 4.4,
+      "image": "images/product-22.jpg"
+    },
+    {
+      "id": "23",
+      "name": "Smart Bulb",
+      "description": "WiFi-enabled bulb with color control.",
+      "price": 11.99,
+      "quantity": 100,
+      "category": "Smart Home",
+      "rating": 4.2,
+      "image": "images/product-23.jpg"
+    },
+    {
+      "id": "24",
+      "name": "Smart Plug",
+      "description": "Control devices remotely via app.",
+      "price": 13.99,
+      "quantity": 85,
+      "category": "Smart Home",
+      "rating": 4.3,
+      "image": "images/product-24.jpg"
+    },
+    {
+      "id": "25",
+      "name": "Electric Kettle",
+      "description": "Fast boiling kettle with auto shut-off.",
+      "price": 29.99,
+      "quantity": 35,
+      "category": "Kitchen",
+      "rating": 4.5,
+      "image": "images/product-25.jpg"
+    },
+    {
+      "id": "26",
+      "name": "Coffee Grinder",
+      "description": "Compact grinder for fresh coffee beans.",
+      "price": 39.99,
+      "quantity": 28,
+      "category": "Kitchen",
+      "rating": 4.4,
+      "image": "images/product-26.jpeg"
+    },
+    {
+      "id": "27",
+      "name": "Fitness Tracker",
+      "description": "Track steps, sleep, and heart rate.",
+      "price": 49.99,
+      "quantity": 50,
+      "category": "Wearables",
+      "rating": 4.3,
+      "image": "images/product-27.jpg"
+    },
+    {
+      "id": "28",
+      "name": "Smart Scale",
+      "description": "Measure weight and body composition.",
+      "price": 59.99,
+      "quantity": 22,
+      "category": "Health",
+      "rating": 4.2,
+      "image": "images/product-28.jpg"
+    },
+    {
+      "id": "29",
+      "name": "Air Purifier",
+      "description": "Removes dust and allergens from air.",
+      "price": 129.99,
+      "quantity": 18,
+      "category": "Home",
+      "rating": 4.6,
+      "image": "images/product-29.jpg"
+    },
+    {
+      "id": "30",
+      "name": "Robot Vacuum",
+      "description": "Automatic vacuum cleaner with smart navigation.",
+      "price": 249.99,
+      "quantity": 14,
+      "category": "Home",
+      "rating": 4.7,
+      "image": "images/product-30.jpg"
+    },
+    {
+      "id": "31",
+      "name": "Noise Cancelling Earbuds",
+      "description": "Compact earbuds with active noise cancellation.",
+      "price": 79.99,
+      "quantity": 33,
+      "category": "Audio",
+      "rating": 4.5,
+      "image": "images/product-31.jpg"
+    },
+    {
+      "id": "32",
+      "name": "Phone Tripod",
+      "description": "Adjustable tripod for smartphones.",
+      "price": 16.99,
+      "quantity": 60,
+      "category": "Photography",
+      "rating": 4.2,
+      "image": "images/product-32.jpeg"
+    },
+    {
+      "id": "33",
+      "name": "DSLR Camera",
+      "description": "High-resolution camera for photography enthusiasts.",
+      "price": 499.99,
+      "quantity": 8,
+      "category": "Photography",
+      "rating": 4.8,
+      "image": "images/product-33.jpg"
+    },
+    {
+      "id": "34",
+      "name": "Action Camera",
+      "description": "Waterproof camera for extreme sports.",
+      "price": 149.99,
+      "quantity": 18,
+      "category": "Photography",
+      "rating": 4.4,
+      "image": "images/product-34.jpg"
+    },
+    {
+      "id": "35",
+      "name": "Tablet 10-inch",
+      "description": "Lightweight tablet for media and browsing.",
+      "price": 199.99,
+      "quantity": 27,
+      "category": "Devices",
+      "rating": 4.3,
+      "image": "images/product-35.jpg"
+    },
+    {
+      "id": "36",
+      "name": "Mini Projector",
+      "description": "Portable projector for movies and presentations.",
+      "price": 179.99,
+      "quantity": 15,
+      "category": "Entertainment",
+      "rating": 4.5,
+      "image": "images/product-36.jpg"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
