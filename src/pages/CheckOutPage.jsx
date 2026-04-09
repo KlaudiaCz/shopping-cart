@@ -207,7 +207,7 @@ const CheckOutPage = () => {
               <img
                 src={item.image}
                 alt={item.name}
-                className="w-30 h-30 border border-gray-200 rounded-lg"
+                className="w-30 h-30 border border-gray-200 rounded-lg object-cover"
               />
               <div className="">
                 <p>{item.name}</p>

@@ -20,7 +20,7 @@ const CartDropdown = ({ setShowDropdown }) => {
           <>
             <ul className="max-h-60 overflow-y-auto divide-y divide-gray-200">
               {cart.map((item) => (
-                <li className="flex justify-between items-center py-2">
+                <li key={item.id} className="flex justify-between items-center py-2">
                   <div>
                     <p className="font-semibold">{item.name}</p>
                     <p className="text-gray-500 text-sm">
