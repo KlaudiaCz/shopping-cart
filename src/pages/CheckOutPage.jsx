@@ -1,22 +1,18 @@
 import { useState } from "react";
-import { TbTruckDelivery } from "react-icons/tb";
-import { PiPackage } from "react-icons/pi";
-import { BiSolidDiscount } from "react-icons/bi";
 import { TiArrowBack } from "react-icons/ti";
 import { LuLockKeyhole } from "react-icons/lu";
 import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
-import { getNames } from "country-list";
-import Select from "react-select";
+import PhoneInputField from "../components/PhoneInputField";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/useCart";
+import RadioOptions from "../components/RadioOptions";
+import InputField from "../components/InputField";
+import CountrySelector from "../components/CountrySelector";
+import InputFieldSmall from "../components/InputFieldSmall";
+import DiscountInput from "../components/DiscountInput";
 
 const CheckOutPage = () => {
-  const [selected, setSelected] = useState();
-  const [number, setNumber] = useState();
-  const [country, setCountry] = useState();
   const [accepted, setAccepted] = useState(false);
-  const [code, setCode] = useState("");
   const [shippingCost, setShippingCost] = useState(0);
   const [discountAmount, setDiscountAmount] = useState(0);
 
@@ -34,26 +30,12 @@ const CheckOutPage = () => {
 
     setShippingCost(shipping);
     setDiscountAmount(discount);
-    setCode("");
   };
 
   const total = (parseFloat(subtotal) + shippingCost - discountAmount).toFixed(
     2,
   );
 
-  const countries = getNames().map((name) => ({
-    value: name,
-    label: name,
-  }));
-
-  const options = [
-    {
-      id: "delivery",
-      label: "Delivery",
-      icon: <TbTruckDelivery className="w-6 h-6" />,
-    },
-    { id: "pickup", label: "Pickup", icon: <PiPackage className="w-6 h-6" /> },
-  ];
   return (
     <div className="relative flex flex-col md:flex-row min-h-screen w-full">
       <Link
@@ -71,111 +53,51 @@ const CheckOutPage = () => {
         </h2>
         {/* Options */}
         <div className="flex flex-col sm:flex-row gap-4">
-          {options.map((opt) => (
-            <div
-              key={opt.id}
-              onClick={() => setSelected(opt.id)}
-              className={`flex items-center gap-3 p-4 border rounded-lg w-60 cursor-pointer
-                        ${selected === opt.id ? "bg-blue-100 border-blue-500" : "border-gray-300"}`}
-            >
-              {/* Dot */}
-              <div
-                className={`w-5 h-5 border-2 rounded-full flex items-center justify-center
-                          ${selected === opt.id ? "border-blue-500" : "border-gray-400"}`}
-              >
-                {selected === opt.id && (
-                  <div className="w-3 h-3 border-blue-500 border-4 rounded-full" />
-                )}
-              </div>
-
-              {/* Icon & Label */}
-              <div
-                className={`flex items-center gap-2  ${selected === opt.id ? "text-blue-500" : "text-gray-700"}`}
-              >
-                {opt.icon}
-                <span
-                  className={`${selected === opt.id ? "text-blue-500" : "text-gray-700"}`}
-                >
-                  {opt.label}
-                </span>
-              </div>
-            </div>
-          ))}
+          <RadioOptions />
         </div>
         {/* Inputs/Form */}
         <div className="mt-4 flex flex-col gap-2">
           {/* Name */}
-          <label htmlFor="name">Full name</label>
-          <input
-            type="text"
-            placeholder="Enter full name"
-            className="p-3 border border-gray-300 rounded-lg mb-3"
-            required
+          <InputField
+            label="name"
+            name="Full name"
+            placeholder="Enter full name..."
           />
+
           {/* Email */}
-          <label htmlFor="">Email adress</label>
-          <input
-            type="text"
+          <InputField
+            label="email"
+            name="Email address"
             placeholder="Enter email address"
-            className="p-3 border border-gray-300 rounded-lg mb-3"
-            required
           />
+
           {/* Phone */}
-          <label htmlFor="">Phone number</label>
-          <PhoneInput
-            value={number}
-            onChange={setNumber}
-            placeholder="Enter phone number"
-            className="p-3 border border-gray-300 rounded-lg mb-3"
-          />
+          <PhoneInputField />
+
           {/* Country */}
-          <label htmlFor="">Country</label>
-          <Select
-            options={countries}
-            value={country}
-            onChange={setCountry}
-            className="mb-3"
-            styles={{
-              control: (base) => ({
-                ...base,
-                padding: "6px",
-                borderRadius: "8px",
-                borderColor: "#d1d5db",
-              }),
-            }}
-            placeholder="Choose country"
-          />
+          <CountrySelector />
+
           {/* Rest inputs */}
-          <div className="flex gap-2">
-            <div className="flex flex-col w-45 gap-1">
-              <label htmlFor="city">City</label>
-              <input
-                type="text"
-                placeholder="Enter city"
-                className="p-3 border border-gray-300 rounded-lg mb-3"
-                required
-              />
-            </div>
-            <div className="flex flex-col w-45 gap-1">
-              <label htmlFor="state">State</label>
-              <input
-                type="text"
-                placeholder="Enter state"
-                className="p-3 border border-gray-300 rounded-lg mb-3"
-                required
-              />
-            </div>{" "}
-            <div className="flex flex-col w-45 gap-1">
-              <label htmlFor="zipcode">ZIP Code</label>
-              <input
-                type="text"
-                placeholder="Enter ZIP code"
-                className="p-3 border border-gray-300 rounded-lg mb-3"
-                required
-              />
-            </div>
+          <div className="flex gap-2 md:gap-4">
+            <InputFieldSmall
+              label="city"
+              name="City"
+              placeholder="Enter city..."
+            />
+            <InputFieldSmall
+              label="state"
+              name="State"
+              placeholder="Enter state..."
+            />
+            <InputFieldSmall
+              label="code"
+              name="ZIP Code"
+              placeholder="Enter ZIP code..."
+            />
           </div>
         </div>
+
+        {/* Terms Checkbox */}
         <div>
           <label className="flex items-center gap-2 mt-3 cursor-pointer">
             <input
@@ -193,6 +115,7 @@ const CheckOutPage = () => {
           </label>
         </div>
       </div>
+
       {/* Right Side */}
       <div className="w-full md:w-2/5 border border-gray-300 bg-gray-100 p-15 md:p-20">
         <h2 className="text-lg md:text-xl font-semibold mb-5">
@@ -218,24 +141,8 @@ const CheckOutPage = () => {
           ))
         )}
         {/* Discount input */}
-        <div className="relative w-full mt-4">
-          <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-            <BiSolidDiscount className="w-6 h-6" />
-          </div>
-          <input
-            type="text"
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-            placeholder="Discount code"
-            className="w-full pl-10 pr-24 p-3 border border-gray-300 rounded-lg"
-          />
-          <button
-            onClick={() => randomizeCosts()}
-            className="absolute right-1 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-600 px-4 py-2"
-          >
-            Apply
-          </button>
-        </div>
+        <DiscountInput randomizeCosts={() => randomizeCosts()}/>
+
         {/* Summary price */}
         <div className="mt-6 flex flex-col gap-3">
           <div className="flex justify-between">
@@ -255,16 +162,26 @@ const CheckOutPage = () => {
             <p className="font-semibold text-md">${total}</p>
           </div>
         </div>
+
         {/* Pay Btn */}
-        <button disabled={!accepted} className={`p-4 text-center w-full ${accepted ? "bg-blue-600 hover:bg-blue-700 text-white cursor-pointer" : "bg-gray-400 text-gray-200 cursor-not-allowed"} transition-colors text-white font-semibold mt-8 rounded-lg`}>
+        <button
+          disabled={!accepted}
+          className={`p-4 text-center w-full ${accepted ? "bg-blue-600 hover:bg-blue-700 text-white cursor-pointer" : "bg-gray-400 text-gray-200 cursor-not-allowed"} transition-colors text-white font-semibold mt-8 rounded-lg`}
+        >
           Pay Now
         </button>
+        {/* Security Info */}
         <div className="mt-10">
           <div className="mb-3 flex items-center gap-3">
-            <LuLockKeyhole className="h-6 w-6 text-blue-500"/>
-            <span className="font-semibold">Secure Checkout - SSL Encrypted</span>
+            <LuLockKeyhole className="h-6 w-6 text-blue-500" />
+            <span className="font-semibold">
+              Secure Checkout - SSL Encrypted
+            </span>
           </div>
-          <p className="text-sm text-gray-400 font-light">Ensuring your financial and personal details are secure during every transaction.</p>
+          <p className="text-sm text-gray-400 font-light">
+            Ensuring your financial and personal details are secure during every
+            transaction.
+          </p>
         </div>
       </div>
     </div>
