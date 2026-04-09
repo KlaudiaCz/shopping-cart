@@ -3,7 +3,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const CartDropdown = () => {
+const CartDropdown = ({ setShowDropdown }) => {
   const { cart, removeFromCart, clearCart, addToCart, decreaseFromCart } =
     useCart();
   const total = cart
@@ -65,7 +65,7 @@ const CartDropdown = () => {
               Clear Cart
             </button>
             <Link to="/checkout">
-              <button className="mt-3 w-full bg-blue-500 text-white py-1 rounded transition hover:bg-blue-600">
+              <button onClick={() => setShowDropdown(false)} className="mt-3 w-full bg-blue-500 text-white py-1 rounded transition hover:bg-blue-600">
                 Check Out
               </button>
             </Link>

@@ -10,8 +10,8 @@ const Header = () => {
   const itemCount = cart.reduce((acc, item) => acc + item.qty, 0); // Calculate total quantity of items in the cart
   
   return (
-    <header className="sticky top-0 bg-white shadow-md p-4 flex justify-between items-center">
-      <h1 className="text-2xl font-bold text-blue-800">Shop Mate</h1>
+    <header className="sticky top-0 bg-white shadow-md p-4 flex justify-between items-center z-100">
+      <h1 className="text-2xl font-bold text-blue-800">My Shop Mate</h1>
       <div className="relative">
         <button
           onClick={() => setShowDropdown(!showDropdown)}
@@ -27,7 +27,7 @@ const Header = () => {
         </button>
 
         {showDropdown && (
-          <CartDropdown />
+          <CartDropdown setShowDropdown={setShowDropdown}/>
         )}
       </div>
     </header>
